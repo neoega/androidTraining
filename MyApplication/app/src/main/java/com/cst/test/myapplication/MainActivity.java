@@ -1,6 +1,8 @@
 package com.cst.test.myapplication;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.media.audiofx.BassBoost;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -73,9 +75,15 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            showSettings();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showSettings() {
+        Intent intent = new Intent(MainActivity.this, Settings.class);
+        startActivity(intent);
     }
 }
